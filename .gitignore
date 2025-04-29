@@ -17,6 +17,17 @@ ENV/
 *.csv
 *.tsv
 
+# Dataset content
+data/images/*
+data/labels/*
+
+# But keep structure
+!data/images/.gitkeep
+!data/images/train/.gitkeep
+!data/images/val/.gitkeep
+!data/labels/.gitkeep
+!data/labels/train/.gitkeep
+!data/labels/val/.gitkeep
 
 # Model weights and outputs
 runs/
