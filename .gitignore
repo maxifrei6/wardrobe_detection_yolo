@@ -17,9 +17,6 @@ ENV/
 *.csv
 *.tsv
 
-# Dataset content
-data/images/*
-data/labels/*
 
 # Model weights and outputs
 runs/
