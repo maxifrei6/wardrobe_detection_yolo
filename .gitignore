@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+.env
+.venv/
+venv/
+*.egg-info/
+
+# Virtual environments
+env/
+ENV/
+*.env
+
+# Labeling artifacts
+*.json
+*.csv
+*.tsv
+
+# Dataset content
+data/images/*
+data/labels/*
+
+# But keep structure
+!data/images/.gitkeep
+!data/images/train/.gitkeep
+!data/images/val/.gitkeep
+!data/labels/.gitkeep
+!data/labels/train/.gitkeep
+!data/labels/val/.gitkeep
+
+# Model weights and outputs
+runs/
+outputs/
+*.pt
+*.onnx
+*.tflite
+
+# Logs
+*.log
+outputs/logs/
+wandb/
+
+# System files
+.DS_Store
+Thumbs.db
