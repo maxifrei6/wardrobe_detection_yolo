@@ -31,14 +31,12 @@ data/labels/*
 
 # Model weights and outputs
 runs/
-outputs/
 *.pt
 *.onnx
 *.tflite
 
 # Logs
 *.log
-outputs/logs/
 wandb/
 
 # System files

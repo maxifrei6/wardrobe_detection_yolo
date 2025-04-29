@@ -50,9 +50,9 @@ yolo_wardrobe_detection/
 
 ## Notes
 
-- Labeling was performed using **Label Studio**, with bounding boxes tightly drawn around clothing items, avoiding background noise where possible.
-- The project is currently **pre-training**: labeling and dataset preparation are finished, but no model training or fine-tuning has started yet.
-- The model will be based on **YOLOv8n (Nano)** to optimize performance for CPU-bound devices like the Raspberry Pi 5.
+- Labeling was performed using **Label Studio**, with bounding boxes tightly drawn around clothing items, minimizing background noise.
+- Training is currently in progress: the dataset preparation phase is complete, and fine-tuning has begun on a **YOLOv8n (Nano)** model.
+- Deployment is planned for a **Raspberry Pi 5**, targeting efficient inference on CPU-only hardware.
 
 
 ## Dataset Creation Process
