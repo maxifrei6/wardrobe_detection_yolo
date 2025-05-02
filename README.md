@@ -185,8 +185,9 @@ The training curves show stable convergence, with losses consistently decreasing
 ![Confusion Matrix](assets/confusion_matrix_normalized.png)
 
 
-- Most classes were correctly classified with >90% confidence.
-- Minor confusion exists between similar shirt categories (e.g., light blue vs. light linen), hinting at potential benefit from more data or clearer visual separation
+- Most classes were correctly classified with near-perfect confidence (≥95%), particularly shoe categories
+- Background misclassification is to be monitored
+
 
 
 
