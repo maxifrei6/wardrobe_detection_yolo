@@ -14,13 +14,15 @@ The goal is to create a lightweight, deployable model (target: Raspberry Pi 5) c
 | Image formatting and cleaning | Completed |
 | Image labeling with bounding boxes (Label Studio) | Completed |
 | Dataset structure organized for YOLOv8 | Completed |
-| Model training and fine-tuning | Ongoing |
+| Model training and fine-tuning Trial Run| Completed |
+| Optimization & Retraining | Ongoing |
 | Deployment preparation | Pending |
 
 - All wardrobe item images have been manually photographed.
 - All images are now labeled with tight bounding boxes.
 - Class labels have been consistently assigned.
 - Dataset is formatted and ready for YOLOv8 training.
+- Trial run is complete and first training results are in.
 
 
 ## Project Folder Structure
@@ -36,7 +38,7 @@ yolo_wardrobe_detection/
 │   │   └── val/          # YOLO format label files for val images
 │   ├── classes.txt       # List of all class names (for labeling tools)
 │   └── data.yaml         # YOLO dataset configuration file
-├── notebooks/            # (Empty for now — will contain Jupyter experiments)
+├── notebooks/            # Trial and evaluation scripts (in progress)
 ├── src/                  # (Empty for now — will contain training scripts)
 ├── outputs/
 │   ├── models/           # (Will store trained model checkpoints)
@@ -149,11 +151,51 @@ data/labels/train/tshirt_white02.txt
 
 ---
 
+
+## Trial Run Results
+
+The initial fine-tuning run was conducted for a maximum of 100 epochs, but early stopping halted training at epoch 85, with the best performance reached at epoch 75.
+
+![Trial Run Results](assets/trial_run_results.png)
+
+
+- Precision (P): 0.979
+- Recall (R): 0.969
+- mAP@0.5: 0.975
+- mAP@0.5–0.95: 0.920
+
+Class-wise results:
+
+- Most classes achieved near-perfect precision and recall, especially for pants, shoes, and light shirts.
+- Minor weaknesses were seen in distinguishing dark t-shirts (precision ~0.90, recall ~0.91) and light blue shirts (precision ~0.98, recall ~0.92), suggesting some room for improvement.
+
+Training efficiency:
+
+- Preprocessing time: ~0.3 ms/image
+- Inference time: ~26.7 ms/image
+- Postprocessing time: ~0.3 ms/image
+
+Model summary:
+- 72 layers, ~3 million parameters, ~8.1 GFLOPs
+
+The training curves show stable convergence, with losses consistently decreasing and no signs of overfitting. Future improvements could include expanding the dataset, especially for borderline classes, and experimenting with hyperparameter tuning
+
+
+
+![Confusion Matrix](assets/confusion_matrix_normalized.png)
+
+
+- Most classes were correctly classified with >90% confidence.
+- Minor confusion exists between similar shirt categories (e.g., light blue vs. light linen), hinting at potential benefit from more data or clearer visual separation
+
+
+
 ## Next Steps
 
-- Fine-tune a YOLOv8n model on the labeled dataset.
 - Validate model performance and optimize it for Raspberry Pi inference.
 - Prepare export formats (ONNX, CoreML) for deployment if needed.
+- Scale dataset size & examples by using open source data collections & Grounding DINO for annotations.
+- Explore other object detection frameworks and models for comparison.
 
 ---
 

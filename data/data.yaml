@@ -1,0 +1,15 @@
+path: ../data
+train: images/train
+val: images/val
+
+nc: 9
+names:
+  - tshirt_white
+  - tshirt_dark
+  - shirt_lightblue
+  - shirt_lightlinen
+  - pants_light
+  - pants_dark
+  - adidas_spezial
+  - adidas_samba
+  - nike_killshot

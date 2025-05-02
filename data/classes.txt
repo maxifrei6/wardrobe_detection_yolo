@@ -1,0 +1,9 @@
+adidas_samba
+adidas_spezial
+nike_killshot
+pants_dark
+pants_light
+shirt_lightblue
+shirt_lightlinen
+tshirt_dark
+tshirt_white
