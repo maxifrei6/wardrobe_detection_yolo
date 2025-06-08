@@ -1,0 +1,4 @@
+sneakers
+trousers
+shirt
+tshirt

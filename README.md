@@ -1,8 +1,8 @@
 # YOLO Wardrobe Detection
 
-This is an ongoing personal project focused on building a custom YOLOv8 object detection model to identify various wardrobe items (shirts, t-shirts, pants, and shoes) from images.
+This is an ongoing personal project focused on building a custom YOLOv8 object detection model to identify various wardrobe items (e.g. shirts, t-shirts, pants, and shoes) from images.
 
-The goal is to create a lightweight, deployable model (target: Raspberry Pi 5) capable of recognizing different categories of clothing based on manually collected and labeled image data.
+The goal is to create a lightweight, deployable model (target: Jetson Orin Nano) capable of recognizing different categories of clothing based on manually collected and labeled image data.
 
 ---
 
@@ -16,6 +16,7 @@ The goal is to create a lightweight, deployable model (target: Raspberry Pi 5) c
 | Dataset structure organized for YOLOv8 | Completed |
 | Model training and fine-tuning Trial Run| Completed |
 | Optimization & Retraining | Ongoing |
+| Refine & Scale Dataset | Ongoing |
 | Deployment preparation | Pending |
 
 - All wardrobe item images have been manually photographed.
@@ -45,7 +46,7 @@ yolo_wardrobe_detection/
 │   ├── predictions/      # (Will store model prediction outputs)
 │   └── logs/             # (Training and evaluation logs)
 ├── README.md             # This project readme
-├── requirements.txt      # (Empty or partial — will be filled post-training)
+├── requirements.txt
 ```
 
 ---
@@ -54,7 +55,7 @@ yolo_wardrobe_detection/
 
 - Labeling was performed using **Label Studio**, with bounding boxes tightly drawn around clothing items, minimizing background noise.
 - Training is currently in progress: the dataset preparation phase is complete, and fine-tuning has begun on a **YOLOv8n (Nano)** model.
-- Deployment is planned for a **Raspberry Pi 5**, targeting efficient inference on CPU-only hardware.
+- Deployment is planned for a **Jetson Orin Nano**, targeting efficient inference on edge.
 
 
 ## Dataset Creation Process
@@ -122,6 +123,7 @@ data/images/val/
 
 ![Bounding Box Example](assets/bounding_box.png)
 
+![Label Statistics](assets/labels.jpg)
 ---
 
 ### 5. YOLO Format Output Example
@@ -156,7 +158,7 @@ data/labels/train/tshirt_white02.txt
 
 The initial fine-tuning run was conducted for a maximum of 100 epochs, but early stopping halted training at epoch 85, with the best performance reached at epoch 75.
 
-![Trial Run Results](assets/trial_run_results.png)
+![Trial Run Results](assets/results.png)
 
 
 - Precision (P): 0.979

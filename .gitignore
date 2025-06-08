@@ -21,6 +21,9 @@ ENV/
 data/images/*
 data/labels/*
 
+# Model
+outputs/wardrobe_yolov8n
+
 # But keep structure
 !data/images/.gitkeep
 !data/images/train/.gitkeep

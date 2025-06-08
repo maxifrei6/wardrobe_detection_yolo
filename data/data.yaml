@@ -4,12 +4,12 @@ val: images/val
 
 nc: 9
 names:
-  - tshirt_white
-  - tshirt_dark
+  - adidas_samba
+  - adidas_spezial
+  - nike_killshot
+  - pants_dark
+  - pants_light
   - shirt_lightblue
   - shirt_lightlinen
-  - pants_light
-  - pants_dark
-  - adidas_spezial
-  - adidas_samba
-  - nike_killshot
+  - tshirt_dark
+  - tshirt_white
